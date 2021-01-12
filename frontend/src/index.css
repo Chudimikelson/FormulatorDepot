@@ -1,0 +1,103 @@
+main {
+  min-height: 80vh;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+.carousel img {
+  height: 300px;
+  padding-top: 30px;
+  margin: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .carousel-caption h2 {
+    font-size: 2.5vw;
+  }
+}
+
+/* custom */
+
+.text-contrast {
+  color: #fff;
+}
+.bg-contrast {
+  background-color: #fff;
+}
+.mainGreen,
+.breadcrumb {
+  background-image: radial-gradient(circle, #56ab2f, #008000, #008000);
+}
+
+.altGreen {
+  background-image: linear-gradient(
+    to right,
+    #5bec7f,
+    #76ec40,
+    #008000
+  ) !important;
+}
+
+.fab,
+.fas {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.fas.fa-search,
+.fas.fa-phone,
+.fas.fa-map-marker,
+.fas.fa-edit {
+  color: #008000;
+  font-size: 1.3rem;
+}
+.mylogo {
+  height: 130px;
+}
+
+.finess {
+  width: 60%;
+  font-size: 1.2rem;
+  background: rgba(250, 248, 250, 0.5);
+  position: relative;
+  bottom: 8rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: #000000;
+  font-weight: bold;
+}
