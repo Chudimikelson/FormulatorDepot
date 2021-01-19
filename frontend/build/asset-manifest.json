@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.072884d1.chunk.css",
+    "main.js": "/static/js/main.89b23ce2.chunk.js",
+    "main.js.map": "/static/js/main.89b23ce2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c60b7f5c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c60b7f5c.js.map",
+    "static/js/2.e2ca5fa5.chunk.js": "/static/js/2.e2ca5fa5.chunk.js",
+    "static/js/2.e2ca5fa5.chunk.js.map": "/static/js/2.e2ca5fa5.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.072884d1.chunk.css.map": "/static/css/main.072884d1.chunk.css.map",
+    "static/js/2.e2ca5fa5.chunk.js.LICENSE.txt": "/static/js/2.e2ca5fa5.chunk.js.LICENSE.txt",
+    "static/media/buttermilk.91d17de6.jpg": "/static/media/buttermilk.91d17de6.jpg",
+    "static/media/carrier-oils.67eab564.jpg": "/static/media/carrier-oils.67eab564.jpg",
+    "static/media/cfd.c200cc97.png": "/static/media/cfd.c200cc97.png",
+    "static/media/img-1.94fd708e.jpg": "/static/media/img-1.94fd708e.jpg",
+    "static/media/img-2.ae3f6484.jpg": "/static/media/img-2.ae3f6484.jpg",
+    "static/media/img-3.2fbf5ea6.jpg": "/static/media/img-3.2fbf5ea6.jpg",
+    "static/media/img-4.ab479846.jpg": "/static/media/img-4.ab479846.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c60b7f5c.js",
+    "static/js/2.e2ca5fa5.chunk.js",
+    "static/css/main.072884d1.chunk.css",
+    "static/js/main.89b23ce2.chunk.js"
+  ]
+}
