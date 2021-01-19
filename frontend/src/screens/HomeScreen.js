@@ -47,7 +47,6 @@ const HomeScreen = ({ match }) => {
         </Link>
       )}
 
-      <h1 className='text-center'>All Our Products</h1>
       {loading ? (
         <Loader />
       ) : error ? (

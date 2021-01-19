@@ -13,6 +13,7 @@ import {
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
 import logo from '../cfd.png'
+import { MobileMenu } from './MobileMenu'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -119,17 +120,20 @@ const Header = () => {
         <div className='container-fluid'>
           <Breadcrumb className='altGreen text-contrast'>
             <Breadcrumb.Item>
-              <Link to='/butters' className='bold lead text-contrast'>
+              <Link to='/BUTTERS-and-OILS' className='bold lead text-contrast'>
                 BUTTERS & OILS
               </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              <Link to='/surfactants' className='bold lead text-contrast'>
+              <Link to='/SURFACTANTS' className='bold lead text-contrast'>
                 SURFACTANTS
               </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              <Link to='/STABILIZERS' className='bold lead text-contrast'>
+              <Link
+                to='/EMULSIFIERS-and-STABILIZERS'
+                className='bold lead text-contrast'
+              >
                 EMULSIFIERS & STABILIZERS
               </Link>
             </Breadcrumb.Item>
@@ -157,19 +161,16 @@ const Header = () => {
       <div className='d-md-none'>
         <Navbar>
           <div className='d-flex justify-content-between'>
-            <LinkContainer to='/'>
+            <LinkContainer to='#'>
               <Nav.Link>
-                <i
-                  className='fas fa-bars pt-3'
-                  style={{ color: '#56ab2f', fontSize: '1.5rem' }}
-                ></i>
+                <MobileMenu />
               </Nav.Link>
             </LinkContainer>
             <LinkContainer className='col-6' to='/'>
               <Image
-                className=''
+                className='small-logo'
                 src={logo}
-                alt='Etoile Beauty Nigeria'
+                alt='cfd'
                 style={{ height: '100px' }}
               />
             </LinkContainer>

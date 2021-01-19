@@ -8,7 +8,7 @@ import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
 import Review from '../components/ReviewsCarousel'
 
-const ButtersCategoryScreen = () => {
+const ActivesCategoryScreen = () => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productCategoryList)
@@ -17,11 +17,10 @@ const ButtersCategoryScreen = () => {
   useEffect(() => {
     dispatch(listProductsByCategory())
   }, [dispatch])
-
   return (
     <>
       <Meta />
-      <h1 className='text-center'>BUTTERS AND OILS</h1>
+      <h1 className='text-center'>ACTIVES AND PRESERVATIVES</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -33,9 +32,9 @@ const ButtersCategoryScreen = () => {
               {products
                 .filter((product) => {
                   return (
-                    product.category === 'BUTTER' ||
-                    product.category === 'CARRIER OIL' ||
-                    product.category === 'ESSENTIAL OIL'
+                    product.category === 'ACTIVE' ||
+                    product.category === 'PRESERVATIVE' ||
+                    product.category === 'COSMECEUTICAL'
                   )
                 })
                 .map((product) => (
@@ -52,4 +51,4 @@ const ButtersCategoryScreen = () => {
   )
 }
 
-export default ButtersCategoryScreen
+export default ActivesCategoryScreen

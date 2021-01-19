@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
@@ -43,9 +43,6 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col md={8}>
-        <p>Price = {newPrice}</p>
-        <p>selected = {selected}</p>
-        <p>{qty}</p>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>

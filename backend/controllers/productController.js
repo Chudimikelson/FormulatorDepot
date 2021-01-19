@@ -157,6 +157,15 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products)
 })
 
+// @desc    Get category products
+// @route   GET /api/products/category
+// @access  Public
+const getCategorypProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({})
+
+  res.json(products)
+})
+
 export {
   getProducts,
   getProductById,
@@ -165,4 +174,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getCategorypProducts,
 }

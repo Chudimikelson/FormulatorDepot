@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
+import AltHomeScreen from './screens/AltHome'
 import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
 import LoginScreen from './screens/LoginScreen'
@@ -20,6 +21,9 @@ import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
 import ButtersCategoryScreen from './screens/ButtersCategoryScreen'
 import SurfactantsScreen from './screens/SurfactantsScreen'
+import EmulsCategoryScreen from './screens/EmulsCategoryScreen'
+import PowdersCategoryScreen from './screens/PowdersCategoryScreen'
+import ActivesCategoryScreen from './screens/ActivesCategoryScreen'
 
 const App = () => {
   return (
@@ -27,8 +31,20 @@ const App = () => {
       <Header />
       <main className='pt-0'>
         <Container fluid>
-          <Route path='/surfactants' component={SurfactantsScreen} />
-          <Route path='/butters' component={ButtersCategoryScreen} />
+          <Route path='/SURFACTANTS' component={SurfactantsScreen} />
+          <Route path='/BUTTERS-and-OILS' component={ButtersCategoryScreen} />
+          <Route
+            path='/EMULSIFIERS-and-STABILIZERS'
+            component={EmulsCategoryScreen}
+          />
+          <Route
+            path='/POWDERS-and-EXTRACTS'
+            component={PowdersCategoryScreen}
+          />
+          <Route
+            path='/ACTIVES-and-PRESERVATIVES'
+            component={ActivesCategoryScreen}
+          />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -59,7 +75,7 @@ const App = () => {
             component={HomeScreen}
             exact
           />
-          <Route path='/' component={HomeScreen} exact />
+          <Route path='/' component={AltHomeScreen} exact />
         </Container>
       </main>
       <Footer />
