@@ -34,7 +34,7 @@ const Actives = () => {
                   return product.category === 'ACTIVE'
                 })
                 .map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Col key={product._id} sm={6} md={4} lg={4} xl={3}>
                     <Product product={product} />
                   </Col>
                 ))}

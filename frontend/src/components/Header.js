@@ -32,7 +32,10 @@ const Header = () => {
   return (
     <header className='mb-1'>
       <div className='d-none d-md-block'>
-        <div className='d-flex justify-content-between mainGreen'>
+        <div
+          className='d-flex justify-content-between'
+          style={{ background: 'rgb(92 161 83)' }}
+        >
           <Navbar className='py-0'>
             <LinkContainer to='/'>
               <Nav.Link className='text-contrast font-regular'>
