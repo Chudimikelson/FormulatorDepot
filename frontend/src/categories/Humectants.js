@@ -8,7 +8,7 @@ import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
 import Review from '../components/ReviewsCarousel'
 
-const ActivesCategoryScreen = () => {
+const Humectants = () => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productCategoryList)
@@ -20,7 +20,7 @@ const ActivesCategoryScreen = () => {
   return (
     <>
       <Meta />
-      <h1 className='text-center'>ACTIVES AND PRESERVATIVES</h1>
+      <h1 className='text-center'>HUMECTANTS</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -31,7 +31,7 @@ const ActivesCategoryScreen = () => {
             <Row>
               {products
                 .filter((product) => {
-                  return product.category === 'ACTIVE'
+                  return product.category === 'HUMECTANT'
                 })
                 .map((product) => (
                   <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
@@ -47,4 +47,4 @@ const ActivesCategoryScreen = () => {
   )
 }
 
-export default ActivesCategoryScreen
+export default Humectants

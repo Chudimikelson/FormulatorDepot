@@ -1,7 +1,10 @@
 main {
   min-height: 80vh;
+  background: #f1f1f18c;
 }
-
+.dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
 h3 {
   padding: 1rem 0;
 }
@@ -79,6 +82,31 @@ h2 {
   color: #fff;
 }
 
+.btn-primary {
+  background-color: #008000;
+  border-color: #008000;
+}
+
+.no-decor-links {
+  color: #fff;
+}
+.dropDown-links {
+  color: #76c2ad;
+}
+.dropDown-links:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.no-decor-links:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.accordion-toggle.list-group-item {
+  color: #76c2ad;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
 .fas.fa-search,
 .fas.fa-phone,
 .fas.fa-map-marker,

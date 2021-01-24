@@ -1,8 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { PayPalButton } from 'react-paypal-button-v2'
+import { PaystackButton } from 'react-paystack'
 import { Link } from 'react-router-dom'
-import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
+import {
+  Container,
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Card,
+  Button,
+} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -19,7 +28,7 @@ import {
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
 
-  const [sdkReady, setSdkReady] = useState(false)
+  //const [sdkReady, setSdkReady] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -44,6 +53,11 @@ const OrderScreen = ({ match, history }) => {
     order.itemsPrice = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.newPrice * item.qty, 0)
     )
+  }
+
+  const config = {
+    reference: new Date().getTime(),
+    publicKey: 'pk_test_8d7bbe3cc26423aad8bac6a494d563c1a164f0a1',
   }
 
   useEffect(() => {
@@ -78,7 +92,13 @@ const OrderScreen = ({ match, history }) => {
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult)
+
     dispatch(payOrder(orderId, paymentResult))
+  }
+
+  const componentProps = {
+    ...config,
+    text: 'Paystack Button Implementation',
   }
 
   const deliverHandler = () => {
@@ -90,7 +110,7 @@ const OrderScreen = ({ match, history }) => {
   ) : error ? (
     <Message variant='danger'>{error}</Message>
   ) : (
-    <>
+    <Container>
       <h1>Order {order._id}</h1>
       <Row>
         <Col md={8}>
@@ -174,7 +194,7 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Subtotal</Col>
                   <Col>&#8358; {order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -199,8 +219,13 @@ const OrderScreen = ({ match, history }) => {
               {!order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
-                  {!sdkReady ? (
-                    <Loader />
+                  {order.paymentMethod === 'Paystack' ? (
+                    <PaystackButton
+                      {...componentProps}
+                      amount={order.totalPrice * 100}
+                      email={userInfo.email}
+                      onSuccess={successPaymentHandler}
+                    />
                   ) : (
                     <PayPalButton
                       amount={order.totalPrice}
@@ -228,7 +253,8 @@ const OrderScreen = ({ match, history }) => {
           </Card>
         </Col>
       </Row>
-    </>
+      <hr className='my-3' />
+    </Container>
   )
 }
 

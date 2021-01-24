@@ -8,6 +8,10 @@ import {
   Nav,
   Container,
   NavDropdown,
+  Dropdown,
+  DropdownButton,
+  Button,
+  ButtonGroup,
   Breadcrumb,
 } from 'react-bootstrap'
 import SearchBox from './SearchBox'
@@ -26,7 +30,7 @@ const Header = () => {
   }
 
   return (
-    <header className='mb-0'>
+    <header className='mb-1'>
       <div className='d-none d-md-block'>
         <div className='d-flex justify-content-between mainGreen'>
           <Navbar className='py-0'>
@@ -117,43 +121,111 @@ const Header = () => {
           </Container>
         </Navbar>{' '}
         {/** Menu Bar */}
-        <div className='container-fluid'>
-          <Breadcrumb className='altGreen text-contrast'>
-            <Breadcrumb.Item>
-              <Link to='/BUTTERS-and-OILS' className='bold lead text-contrast'>
-                BUTTERS & OILS
-              </Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Link to='/SURFACTANTS' className='bold lead text-contrast'>
-                SURFACTANTS
-              </Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Link
-                to='/EMULSIFIERS-and-STABILIZERS'
-                className='bold lead text-contrast'
+        <div className='container-fluid mainGreen'>
+          <div className='container'>
+            <ButtonGroup className='my-1'>
+              <Button size='lg'>
+                <Link className='no-decor-links' to='/SURFACTANTS'>
+                  SURFACTANTS
+                </Link>
+              </Button>
+              <Button size='lg'>
+                <Link className='no-decor-links' to='/ACTIVES'>
+                  ACTIVES
+                </Link>
+              </Button>
+              <DropdownButton
+                size='lg'
+                as={ButtonGroup}
+                title='BUTTERS & OILS '
+                id='bg-nested-dropdown'
               >
-                EMULSIFIERS & STABILIZERS
-              </Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Link
-                to='/POWDERS-and-EXTRACTS'
-                className='bold lead text-contrast'
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/BUTTERS'>
+                    BUTTERS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/ESSENTIAL-OILS'>
+                    ESSENTIAL OILS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/EMOLLIENTS'>
+                    EMOLLIENTS
+                  </Link>
+                </Dropdown.Item>
+              </DropdownButton>
+              <Button size='lg'>
+                <Link className='no-decor-links' to='/PRESERVATIVES'>
+                  PRESERVATIVES
+                </Link>
+              </Button>
+              <DropdownButton
+                size='lg'
+                as={ButtonGroup}
+                title='ADDITIVES '
+                id='bg-nested-dropdown'
               >
-                POWDERS & EXTRACTS
-              </Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Link
-                to='/ACTIVES-and-PRESERVATIVES'
-                className='bold lead text-contrast'
-              >
-                ACTIVES & PRESERVATIVES
-              </Link>
-            </Breadcrumb.Item>
-          </Breadcrumb>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/HYDROSOLS'>
+                    HYDROSOLS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/SOLUBILIZERS'>
+                    SOLUBILIZERS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/HUMECTANTS'>
+                    HUMECTANTS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/ADJUSTERS'>
+                    PH ADJUSTERS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/EMULSIFIERS'>
+                    EMULSIFIERS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/WAXES'>
+                    WAXES
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/THICKNERS'>
+                    THICKNERS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/POWDERS-and-CLAYS'>
+                    POWDERS & CLAYS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/EXFOLIANTS'>
+                    EXFOLIANTS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/EXTRACTS'>
+                    EXTRACTS
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className='dropDown-links' to='/ADDITIVES'>
+                    OTHER ADDITIVES
+                  </Link>
+                </Dropdown.Item>
+              </DropdownButton>
+              <Button size='lg'>COSMETIC BASE</Button>
+            </ButtonGroup>
+          </div>
         </div>
       </div>
       {/**mobile navigation */}

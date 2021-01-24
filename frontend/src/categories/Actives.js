@@ -8,7 +8,7 @@ import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
 import Review from '../components/ReviewsCarousel'
 
-const ActivesCategoryScreen = () => {
+const Actives = () => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productCategoryList)
@@ -20,7 +20,7 @@ const ActivesCategoryScreen = () => {
   return (
     <>
       <Meta />
-      <h1 className='text-center'>ACTIVES AND PRESERVATIVES</h1>
+      <h1 className='text-center'>ACTIVES</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -47,4 +47,4 @@ const ActivesCategoryScreen = () => {
   )
 }
 
-export default ActivesCategoryScreen
+export default Actives

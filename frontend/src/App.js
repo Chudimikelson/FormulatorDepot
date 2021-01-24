@@ -19,11 +19,25 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
-import ButtersCategoryScreen from './screens/ButtersCategoryScreen'
-import SurfactantsScreen from './screens/SurfactantsScreen'
-import EmulsCategoryScreen from './screens/EmulsCategoryScreen'
-import PowdersCategoryScreen from './screens/PowdersCategoryScreen'
-import ActivesCategoryScreen from './screens/ActivesCategoryScreen'
+import Actives from './categories/Actives'
+import Additives from './categories/Additives'
+import Adjusters from './categories/Adjusters'
+import Butters from './categories/Butters'
+import Bases from './categories/Bases'
+import Cosmeceuticals from './categories/Cosmeceuticals'
+import Emollients from './categories/Emollients'
+import EssentialOils from './categories/EssentialOils'
+import Exfoliants from './categories/Exfoliants'
+import Extracts from './categories/Extracts'
+import Humectants from './categories/Humectants'
+import Hydrosols from './categories/Hydrosols'
+import Preservatives from './categoriesPreservativess'
+import Surfactants from './categories/Surfactants'
+import Emulsifiers from './categories/Emulsifiers'
+import PowdersClays from './categories/PowdersClays'
+import Solubilizers from './categories/Solubilizers'
+import Thickners from './categories/Thickners'
+import Waxes from './categories/Waxes'
 
 const App = () => {
   return (
@@ -31,20 +45,26 @@ const App = () => {
       <Header />
       <main className='pt-0'>
         <Container fluid>
-          <Route path='/SURFACTANTS' component={SurfactantsScreen} />
-          <Route path='/BUTTERS-and-OILS' component={ButtersCategoryScreen} />
-          <Route
-            path='/EMULSIFIERS-and-STABILIZERS'
-            component={EmulsCategoryScreen}
-          />
-          <Route
-            path='/POWDERS-and-EXTRACTS'
-            component={PowdersCategoryScreen}
-          />
-          <Route
-            path='/ACTIVES-and-PRESERVATIVES'
-            component={ActivesCategoryScreen}
-          />
+          <Route path='/ACTIVES' component={Actives} />
+          <Route path='/ADDITIVES' component={Additives} />
+          <Route path='/ADJUSTERS' component={Adjusters} />
+          <Route path='/BASE' component={Bases} />
+          <Route path='/BUTTERS' component={Butters} />
+          <Route path='/COSMECEUTICALS' component={Cosmeceuticals} />
+          <Route path='/EMOLLIENTS' component={Emollients} />
+          <Route path='/EMULSIFIERS' component={Emulsifiers} />
+          <Route path='/ESSENTIAL-OILS' component={EssentialOils} />
+          <Route path='/EXFOLIANTS' component={Exfoliants} />
+          <Route path='/EXTRACTS' component={Extracts} />
+          <Route path='/HUMECTANTS' component={Humectants} />
+          <Route path='/HYDROSOLS' component={Hydrosols} />
+          <Route path='/POWDERS-and-CLAYS' component={PowdersClays} />
+          <Route path='/PRESERVATIVES' component={Preservatives} />
+          <Route path='/SOLUBILIZERS' component={Solubilizers} />
+          <Route path='/SURFACTANTS' component={Surfactants} />
+          <Route path='/THICKNERS' component={Thickners} />
+          <Route path='/WAXES' component={Waxes} />
+
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
