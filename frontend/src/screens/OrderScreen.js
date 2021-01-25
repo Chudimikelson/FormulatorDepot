@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { PayPalButton } from 'react-paypal-button-v2'
 import { PaystackButton } from 'react-paystack'
@@ -28,7 +28,7 @@ import {
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
 
-  //const [sdkReady, setSdkReady] = useState(false)
+  const [sdkReady, setSdkReady] = useState(false)
 
   const dispatch = useDispatch()
 
