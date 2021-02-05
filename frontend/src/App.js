@@ -48,7 +48,7 @@ const App = () => {
           <Route path='/ACTIVES' component={Actives} />
           <Route path='/ADDITIVES' component={Additives} />
           <Route path='/ADJUSTERS' component={Adjusters} />
-          <Route path='/BASE' component={Bases} />
+          <Route path='/COSMETIC-BASES' component={Bases} />
           <Route path='/BUTTERS' component={Butters} />
           <Route path='/COSMECEUTICALS' component={Cosmeceuticals} />
           <Route path='/EMOLLIENTS' component={Emollients} />

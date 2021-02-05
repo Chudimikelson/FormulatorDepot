@@ -31,7 +31,7 @@ const Bases = () => {
             <Row>
               {products
                 .filter((product) => {
-                  return product.category === 'BASE'
+                  return product.category === 'SOAP BASE'
                 })
                 .map((product) => (
                   <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

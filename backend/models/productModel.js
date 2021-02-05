@@ -20,7 +20,7 @@ const productSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: false,
       ref: 'User',
     },
     name: {
@@ -31,13 +31,8 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    brand: {
-      type: String,
-      required: true,
-    },
     category: {
       type: String,
-      required: true,
     },
     description: {
       type: String,
@@ -54,9 +49,20 @@ const productSchema = mongoose.Schema(
       required: true,
       default: 0,
     },
-    price: {
+    mini: {
       type: Number,
-      required: true,
+      default: 0,
+    },
+    midi: {
+      type: Number,
+      default: 0,
+    },
+    regular: {
+      type: Number,
+      default: 0,
+    },
+    large: {
+      type: Number,
       default: 0,
     },
     countInStock: {

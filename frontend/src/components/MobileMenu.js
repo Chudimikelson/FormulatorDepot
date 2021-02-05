@@ -60,7 +60,7 @@ export const MobileMenu = () => {
               <Link to='/PRESERVATIVES'>PRESERVATIVES</Link>
             </ListGroup.Item>
             <ListGroup.Item onClick={handleClose}>
-              <Link to='/BASES'>COSMECTIC BASES</Link>
+              <Link to='/COSMETIC-BASES'>COSMECTIC BASES</Link>
             </ListGroup.Item>
             <Accordion defaultActiveKey='0'>
               <Accordion.Toggle

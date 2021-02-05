@@ -14,7 +14,7 @@ const ShopByCategories = () => {
           src={catPic2}
           alt='CFD'
         />
-        <Link to='/BUTTERS-and-OILS'>
+        <Link to='/EMOLLIENTS'>
           <div className='btn btn-block finess mx-auto py-1'>OILS</div>
         </Link>
       </div>
@@ -25,7 +25,7 @@ const ShopByCategories = () => {
           style={{ height: 250 }}
           src={catPic3}
         />
-        <Link to='/ACTIVES-and-PRESERVATIVES'>
+        <Link to='/ACTIVES'>
           <div className='btn btn-block finess mx-auto py-1'>ACTIVES</div>
         </Link>
       </div>
@@ -36,8 +36,8 @@ const ShopByCategories = () => {
           style={{ height: 250 }}
           src={catPic1}
         />
-        <Link to='/EMULSIFIERS-and-STABILIZERS'>
-          <div className='btn btn-block finess mx-auto py-1'>EMULSIFIERS</div>
+        <Link to='/SURFACTANTS'>
+          <div className='btn btn-block finess mx-auto py-1'>SURFACTANTS</div>
         </Link>
       </div>
     </div>

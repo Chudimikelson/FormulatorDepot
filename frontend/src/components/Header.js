@@ -75,7 +75,7 @@ const Header = () => {
               </Nav.Link>
             </LinkContainer>
             {userInfo ? (
-              <NavDropdown title={userInfo.name} id='username'>
+              <NavDropdown title={<i className='fas fa-user' />} id='username'>
                 <LinkContainer to='/profile'>
                   <NavDropdown.Item>Profile</NavDropdown.Item>
                 </LinkContainer>
@@ -226,7 +226,11 @@ const Header = () => {
                   </Link>
                 </Dropdown.Item>
               </DropdownButton>
-              <Button size='lg'>COSMETIC BASE</Button>
+              <Button size='lg'>
+                <Link className='no-decor-links' to='/COSMETIC-BASES'>
+                  COSMETIC BASE
+                </Link>
+              </Button>
             </ButtonGroup>
           </div>
         </div>
@@ -234,9 +238,39 @@ const Header = () => {
       {/**mobile navigation */}
 
       <div className='d-md-none'>
+        <div>
+          {userInfo ? (
+            <NavDropdown
+              className='col-12 my-auto'
+              title={
+                <i
+                  className='fas fa-user'
+                  style={{ color: 'rgb(86 171 47)', fontSize: '1.3rem' }}
+                />
+              }
+              id='username'
+            >
+              <LinkContainer to='/profile'>
+                <NavDropdown.Item>Profile</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logoutHandler}>
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : (
+            <LinkContainer className='col-2 my-auto' to='/login'>
+              <Nav.Link>
+                <i
+                  className='fas fa-user'
+                  style={{ color: 'rgb(86 171 47)' }}
+                ></i>
+              </Nav.Link>
+            </LinkContainer>
+          )}
+        </div>
         <Navbar>
           <div className='d-flex justify-content-between'>
-            <LinkContainer to='#'>
+            <LinkContainer className='col-2' to='#'>
               <Nav.Link>
                 <MobileMenu />
               </Nav.Link>
@@ -249,11 +283,12 @@ const Header = () => {
                 style={{ height: '100px' }}
               />
             </LinkContainer>
-            <LinkContainer to='/cart'>
+
+            <LinkContainer className='col-2 my-auto  mr-0 pr-0' to='/cart'>
               <Nav.Link>
                 <i
-                  className='fas fa-shopping-cart pt-3'
-                  style={{ color: '#56ab2f', fontSize: '1.5rem' }}
+                  className='fas fa-shopping-cart'
+                  style={{ color: '#56ab2f', fontSize: '1.3rem' }}
                 />
               </Nav.Link>
             </LinkContainer>
