@@ -37,32 +37,37 @@ const Header = () => {
           style={{ background: 'rgb(92 161 83)' }}
         >
           <Navbar className='py-0'>
-            <LinkContainer to='/'>
-              <Nav.Link className='text-contrast font-regular'>
+            <LinkContainer to='#'>
+              <Nav.Link className='text-contrast font-regular no-decor-links'>
                 Chat Us
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/'>
-              <Nav.Link>
-                <i className='fab fa-whatsapp' />
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to='/'>
-              <Nav.Link>
-                <i className='fab fa-instagram' />
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to='/'>
+
+            <Nav.Link
+              href='https://api.whatsapp.com/send?phone=2348044567890'
+              rel='noreferrer'
+              target='_blank'
+            >
+              <i className='fab fa-whatsapp' />
+            </Nav.Link>
+            <Nav.Link
+              href='https://www.instagram.com/cosmeticformulatordepot/'
+              rel='noreferrer'
+              target='_blank'
+            >
+              <i className='fab fa-instagram' />
+            </Nav.Link>
+            <LinkContainer to='#'>
               <Nav.Link>
                 <i className='fab fa-facebook' />
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/'>
+            <LinkContainer to='#'>
               <Nav.Link>
                 <i className='fab fa-twitter' />
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer to='/'>
+            <LinkContainer to='#'>
               <Nav.Link>
                 <i className='fab fa-telegram' />
               </Nav.Link>
@@ -70,12 +75,35 @@ const Header = () => {
           </Navbar>
           <Navbar className='ml-auto'>
             <LinkContainer to='/cart'>
-              <Nav.Link>
+              <Nav.Link className='hover-white'>
                 <i className='fas fa-shopping-cart'></i> Cart
               </Nav.Link>
             </LinkContainer>
             {userInfo ? (
-              <NavDropdown title={<i className='fas fa-user' />} id='username'>
+              <NavDropdown
+                title={
+                  <div>
+                    <i className='pr-2 fas fa-user' />
+                    {userInfo.name}
+                  </div>
+                }
+                id='username'
+              >
+                {userInfo.isAdmin && (
+                  <>
+                    {' '}
+                    <LinkContainer to='/admin/userlist'>
+                      <NavDropdown.Item>Users</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/productlist'>
+                      <NavDropdown.Item>Products</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/orderlist'>
+                      <NavDropdown.Item>Orders</NavDropdown.Item>
+                    </LinkContainer>
+                    <Dropdown.Divider />
+                  </>
+                )}
                 <LinkContainer to='/profile'>
                   <NavDropdown.Item>Profile</NavDropdown.Item>
                 </LinkContainer>
@@ -85,23 +113,10 @@ const Header = () => {
               </NavDropdown>
             ) : (
               <LinkContainer to='/login'>
-                <Nav.Link>
+                <Nav.Link className='hover-white'>
                   <i className='fas fa-user'></i> Sign In
                 </Nav.Link>
               </LinkContainer>
-            )}
-            {userInfo && userInfo.isAdmin && (
-              <NavDropdown title='Admin' id='adminmenu'>
-                <LinkContainer to='/admin/userlist'>
-                  <NavDropdown.Item>Users</NavDropdown.Item>
-                </LinkContainer>
-                <LinkContainer to='/admin/productlist'>
-                  <NavDropdown.Item>Products</NavDropdown.Item>
-                </LinkContainer>
-                <LinkContainer to='/admin/orderlist'>
-                  <NavDropdown.Item>Orders</NavDropdown.Item>
-                </LinkContainer>
-              </NavDropdown>
             )}
           </Navbar>
         </div>
@@ -238,36 +253,6 @@ const Header = () => {
       {/**mobile navigation */}
 
       <div className='d-md-none'>
-        <div>
-          {userInfo ? (
-            <NavDropdown
-              className='col-12 my-auto'
-              title={
-                <i
-                  className='fas fa-user'
-                  style={{ color: 'rgb(86 171 47)', fontSize: '1.3rem' }}
-                />
-              }
-              id='username'
-            >
-              <LinkContainer to='/profile'>
-                <NavDropdown.Item>Profile</NavDropdown.Item>
-              </LinkContainer>
-              <NavDropdown.Item onClick={logoutHandler}>
-                Logout
-              </NavDropdown.Item>
-            </NavDropdown>
-          ) : (
-            <LinkContainer className='col-2 my-auto' to='/login'>
-              <Nav.Link>
-                <i
-                  className='fas fa-user'
-                  style={{ color: 'rgb(86 171 47)' }}
-                ></i>
-              </Nav.Link>
-            </LinkContainer>
-          )}
-        </div>
         <Navbar>
           <div className='d-flex justify-content-between'>
             <LinkContainer className='col-2' to='#'>
@@ -275,15 +260,52 @@ const Header = () => {
                 <MobileMenu />
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer className='col-6' to='/'>
-              <Image
-                className='small-logo'
-                src={logo}
-                alt='cfd'
-                style={{ height: '100px' }}
-              />
+            <LinkContainer className='col-4' to='/'>
+              <Image className='small-logo' src={logo} alt='cfd' />
             </LinkContainer>
+            <div className='col-2 my-auto'>
+              {userInfo ? (
+                <NavDropdown
+                  title={
+                    <i
+                      className='fas fa-user'
+                      style={{ color: 'rgb(86 171 47)', fontSize: '1.3rem' }}
+                    />
+                  }
+                  id='username'
+                >
+                  {userInfo.isAdmin ? (
+                    <>
+                      <LinkContainer to='/admin/userlist'>
+                        <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to='/admin/productlist'>
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to='/admin/orderlist'>
+                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                      </LinkContainer>
+                    </>
+                  ) : (
+                    <LinkContainer to='/profile'>
+                      <Dropdown.Item>Profile</Dropdown.Item>
+                    </LinkContainer>
+                  )}
 
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer className='col-2 my-auto' to='/login'>
+                  <Nav.Link>
+                    <i
+                      className='fas fa-user'
+                      style={{ color: 'rgb(86 171 47)' }}
+                    ></i>
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+            </div>
             <LinkContainer className='col-2 my-auto  mr-0 pr-0' to='/cart'>
               <Nav.Link>
                 <i

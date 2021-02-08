@@ -39,11 +39,7 @@ h2 {
 }
 
 .carousel img {
-  height: 300px;
-  padding-top: 30px;
-  margin: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  max-height: 450px;
 }
 .carousel a {
   margin: 0 auto;
@@ -51,6 +47,11 @@ h2 {
 @media (max-width: 900px) {
   .carousel-caption h2 {
     font-size: 2.5vw;
+  }
+}
+@media (max-width: 600px) {
+  .carousel img {
+    max-height: 250px;
   }
 }
 
@@ -118,9 +119,16 @@ h2 {
   height: 130px;
 }
 .small-logo {
-  max-height: 5rem;
+  max-height: 3rem;
 }
 
+#username.dropdown-toggle::after {
+  display: none;
+}
+#username:hover,
+.hover-white:hover {
+  color: #fff;
+}
 .finess {
   width: 60%;
   font-size: 1.2rem;

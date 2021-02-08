@@ -7,7 +7,7 @@ import slide4 from '../img/img-4.jpg'
 
 const Review = () => {
   return (
-    <div className='mainGreen py-4'>
+    <div className='mainGreen py-4 mt-4'>
       <h1 className='text-center u-dancing-script text-contrast'>
         What our customers are saying
       </h1>

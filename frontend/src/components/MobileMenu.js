@@ -11,7 +11,7 @@ export const MobileMenu = () => {
     <>
       <span onClick={handleShow}>
         <i
-          className='fas fa-bars pt-3'
+          className='fas fa-bars'
           style={{ color: '#56ab2f', fontSize: '1.5rem' }}
         ></i>
       </span>

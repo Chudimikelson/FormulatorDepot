@@ -98,7 +98,7 @@ const OrderScreen = ({ match, history }) => {
 
   const componentProps = {
     ...config,
-    text: 'Paystack Button Implementation',
+    text: 'Make Payment',
   }
 
   const deliverHandler = () => {
@@ -111,7 +111,7 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <Container>
-      <h1>Order {order._id}</h1>
+      <h1>Order ID: {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
@@ -221,6 +221,7 @@ const OrderScreen = ({ match, history }) => {
                   {loadingPay && <Loader />}
                   {order.paymentMethod === 'Paystack' ? (
                     <PaystackButton
+                      className='btn btn-success btn-block'
                       {...componentProps}
                       amount={order.totalPrice * 100}
                       email={userInfo.email}
