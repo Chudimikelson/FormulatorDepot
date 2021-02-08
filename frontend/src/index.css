@@ -53,6 +53,10 @@ h2 {
   .carousel img {
     max-height: 250px;
   }
+  .fas.fa-user,
+  .fas.fa-shopping-cart {
+    font-size: large;
+  }
 }
 
 /* custom */

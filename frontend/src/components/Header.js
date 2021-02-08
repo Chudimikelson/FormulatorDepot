@@ -12,7 +12,6 @@ import {
   DropdownButton,
   Button,
   ButtonGroup,
-  Breadcrumb,
 } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
@@ -253,67 +252,156 @@ const Header = () => {
       {/**mobile navigation */}
 
       <div className='d-md-none'>
+        <nav class='navbar fixed-bottom navbar-light bg-light'>
+          <div className='col-3'>
+            {' '}
+            {userInfo ? (
+              <NavDropdown
+                title={
+                  <i
+                    className='fas fa-user'
+                    style={{
+                      color: 'rgb(86 171 47)',
+                      fontSize: '1.3rem',
+                    }}
+                  />
+                }
+                id='username'
+              >
+                {userInfo.isAdmin ? (
+                  <>
+                    <LinkContainer to='/admin/userlist'>
+                      <NavDropdown.Item>Users</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/productlist'>
+                      <NavDropdown.Item>Products</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to='/admin/orderlist'>
+                      <NavDropdown.Item>Orders</NavDropdown.Item>
+                    </LinkContainer>
+                  </>
+                ) : (
+                  <LinkContainer to='/profile'>
+                    <Dropdown.Item>Profile</Dropdown.Item>
+                  </LinkContainer>
+                )}
+
+                <Dropdown.Divider />
+                <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
+              </NavDropdown>
+            ) : (
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <i
+                    className='fas fa-user'
+                    style={{ color: 'rgb(86 171 47)' }}
+                  ></i>
+                </Nav.Link>
+              </LinkContainer>
+            )}
+          </div>
+          <div className='col-3'>
+            <Link to='/search'>
+              <i
+                className='fas fa-search'
+                style={{ color: '#56ab2f', fontSize: '1.3rem' }}
+              />
+            </Link>
+          </div>
+          <div className='col-3'>
+            <Link to='/cart'>
+              <i
+                className='fas fa-shopping-cart'
+                style={{ color: '#56ab2f', fontSize: '1.3rem' }}
+              />
+            </Link>
+          </div>
+          <div className='col-3'>
+            <Nav.Link
+              href='https://api.whatsapp.com/send?phone=2348044567890'
+              rel='noreferrer'
+              target='_blank'
+            >
+              <i
+                className='fab fa-whatsapp'
+                style={{ color: '#56ab2f', fontSize: '1.5rem' }}
+              />
+            </Nav.Link>
+          </div>
+        </nav>
         <Navbar>
-          <div className='d-flex justify-content-between'>
+          <div className='d-flex'>
             <LinkContainer className='col-2' to='#'>
               <Nav.Link>
                 <MobileMenu />
               </Nav.Link>
             </LinkContainer>
-            <LinkContainer className='col-4' to='/'>
+            <LinkContainer className='col-7 ml-4' to='/'>
               <Image className='small-logo' src={logo} alt='cfd' />
             </LinkContainer>
-            <div className='col-2 my-auto'>
-              {userInfo ? (
-                <NavDropdown
-                  title={
-                    <i
-                      className='fas fa-user'
-                      style={{ color: 'rgb(86 171 47)', fontSize: '1.3rem' }}
-                    />
-                  }
-                  id='username'
-                >
-                  {userInfo.isAdmin ? (
-                    <>
-                      <LinkContainer to='/admin/userlist'>
-                        <NavDropdown.Item>Users</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to='/admin/productlist'>
-                        <NavDropdown.Item>Products</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to='/admin/orderlist'>
-                        <NavDropdown.Item>Orders</NavDropdown.Item>
-                      </LinkContainer>
-                    </>
+            {/**  <div className='col-4'>
+              <div className='d-flex'>
+                <div className='col-6 pr-0'>
+                  {' '}
+                  {userInfo ? (
+                    <NavDropdown
+                      title={
+                        <i
+                          className='fas fa-user'
+                          style={{
+                            color: 'rgb(86 171 47)',
+                            fontSize: '1.3rem',
+                          }}
+                        />
+                      }
+                      id='username'
+                    >
+                      {userInfo.isAdmin ? (
+                        <>
+                          <LinkContainer to='/admin/userlist'>
+                            <NavDropdown.Item>Users</NavDropdown.Item>
+                          </LinkContainer>
+                          <LinkContainer to='/admin/productlist'>
+                            <NavDropdown.Item>Products</NavDropdown.Item>
+                          </LinkContainer>
+                          <LinkContainer to='/admin/orderlist'>
+                            <NavDropdown.Item>Orders</NavDropdown.Item>
+                          </LinkContainer>
+                        </>
+                      ) : (
+                        <LinkContainer to='/profile'>
+                          <Dropdown.Item>Profile</Dropdown.Item>
+                        </LinkContainer>
+                      )}
+
+                      <Dropdown.Divider />
+                      <Dropdown.Item onClick={logoutHandler}>
+                        Logout
+                      </Dropdown.Item>
+                    </NavDropdown>
                   ) : (
-                    <LinkContainer to='/profile'>
-                      <Dropdown.Item>Profile</Dropdown.Item>
+                    <LinkContainer to='/login'>
+                      <Nav.Link>
+                        <i
+                          className='fas fa-user'
+                          style={{ color: 'rgb(86 171 47)' }}
+                        ></i>
+                      </Nav.Link>
                     </LinkContainer>
                   )}
+                </div>
 
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
-                </NavDropdown>
-              ) : (
-                <LinkContainer className='col-2 my-auto' to='/login'>
+                <LinkContainer className='col-6' to='/cart'>
                   <Nav.Link>
                     <i
-                      className='fas fa-user'
-                      style={{ color: 'rgb(86 171 47)' }}
-                    ></i>
+                      className='fas fa-shopping-cart'
+                      style={{ color: '#56ab2f', fontSize: '1.3rem' }}
+                    />
                   </Nav.Link>
                 </LinkContainer>
-              )}
+              </div>
             </div>
-            <LinkContainer className='col-2 my-auto  mr-0 pr-0' to='/cart'>
-              <Nav.Link>
-                <i
-                  className='fas fa-shopping-cart'
-                  style={{ color: '#56ab2f', fontSize: '1.3rem' }}
-                />
-              </Nav.Link>
-            </LinkContainer>
+         */}{' '}
           </div>
         </Navbar>
         {/*<Search /> */}

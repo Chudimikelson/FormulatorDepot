@@ -8,7 +8,6 @@ import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
 import Review from '../components/ReviewsCarousel'
 import Banner from '../components/Banner'
-import { Link } from 'react-router-dom'
 
 const AltHome = ({ history }) => {
   const dispatch = useDispatch()
@@ -22,7 +21,6 @@ const AltHome = ({ history }) => {
   }, [dispatch])
 
   const goToCategory = () => {
-    console.log(selectOption)
     history.push(`/${selectOption}`)
   }
 
@@ -33,7 +31,7 @@ const AltHome = ({ history }) => {
       <div className='d-md-none mb-4'>
         <h5 className='text-center'>Shop By Category</h5>
         <Form.Row>
-          <Col xs='11' className='mx-auto'>
+          <Col xs='10' className='mx-auto'>
             <Form.Control
               as='select'
               value={selectOption}
@@ -41,30 +39,33 @@ const AltHome = ({ history }) => {
               custom
             >
               <option>Select Category</option>
-              <option value='EMOLLIENTS'>Emollients</option>
-              <option>Carrier Oils</option>
-              <option>Essential Oils</option>
-              <option>Butters</option>
-              <option>Surfactants</option>
-              <option>Actives</option>
-              <option>Preservatives</option>
-              <option>Cosmetic Bases</option>
-              <option>Hydrosols</option>
-              <option>Humectants</option>
-              <option>Solubilizers</option>
-              <option>Ph Adjusters</option>
-              <option>Thickners</option>
-              <option>Powders & Clays</option>
-              <option>Exfoliants</option>
-              <option>Extracts</option>
-              <option>Waxes</option>
-              <option>Other Additives</option>
+              <option value='EMULSIFIERS'>Emulsifiers</option>
+              <option value='EMOLLIENTS'>Carrier Oils</option>
+              <option value='ESSENTIAL-OIL'>Essential Oils</option>
+              <option value='BUTTERS'>Butters</option>
+              <option value='SURFACTANTS'>Surfactants</option>
+              <option value='ACTIVES'>Actives</option>
+              <option value='PRESERVATIVES'>Preservatives</option>
+              <option value='COSMETIC-BASES'>Cosmetic Bases</option>
+              <option value='HYDROSOLS'>Hydrosols</option>
+              <option value='HUMECTANTS'>Humectants</option>
+              <option value='SOLUBILIZERS'>Solubilizers</option>
+              <option value='ADJUSTERS'>Ph Adjusters</option>
+              <option value='THICKNERS'>Thickners</option>
+              <option value='POWDERS-and-CLAYS'>Powders & Clays</option>
+              <option value='EXFOLIANTS'>Exfoliants</option>
+              <option value='EXTRACTS'>Extracts</option>
+              <option value='WAXES'>Waxes</option>
+              <option value='ADDITIVES'>Other Additives</option>
             </Form.Control>
           </Col>
+          <div
+            className='col-2 btn btn-primary btn-small'
+            onClick={goToCategory}
+          >
+            Go
+          </div>
         </Form.Row>
-        <div className='btn btn-primary' onClick={goToCategory}>
-          Go
-        </div>
       </div>
       <h4 className='text-center'>Featured Products</h4>
       {loading ? (
