@@ -41,7 +41,7 @@ const AltHome = ({ history }) => {
               <option>Select Category</option>
               <option value='EMULSIFIERS'>Emulsifiers</option>
               <option value='EMOLLIENTS'>Carrier Oils</option>
-              <option value='ESSENTIAL-OIL'>Essential Oils</option>
+              <option value='ESSENTIAL-OILS'>Essential Oils</option>
               <option value='BUTTERS'>Butters</option>
               <option value='SURFACTANTS'>Surfactants</option>
               <option value='ACTIVES'>Actives</option>
@@ -81,7 +81,7 @@ const AltHome = ({ history }) => {
                   return product.featured === true
                 })
                 .map((product) => (
-                  <Col key={product._id} xs={12} sm={6}>
+                  <Col key={product._id} xs={12} md={3} sm={6}>
                     <Product product={product} />
                   </Col>
                 ))}
