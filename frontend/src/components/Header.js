@@ -152,6 +152,7 @@ const Header = () => {
                     as={ButtonGroup}
                     title='BUTTERS & OILS '
                     id='bg-nested-dropdown'
+                    className='menu-btn'
                   >
                     <Dropdown.Item>
                       <Link className='dropDown-links' to='/BUTTERS'>
@@ -179,7 +180,7 @@ const Header = () => {
                     as={ButtonGroup}
                     title='ADDITIVES '
                     id='bg-nested-dropdown'
-                    className='btn-contrast'
+                    className='menu-btn'
                   >
                     <Dropdown.Item>
                       <Link className='dropDown-links' to='/HYDROSOLS'>

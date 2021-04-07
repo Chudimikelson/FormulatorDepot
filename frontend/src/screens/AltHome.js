@@ -89,7 +89,7 @@ const AltHome = ({ history }) => {
           </Container>
         </>
       )}
-      <div className='d-none d-md-block'>
+      <div className='d-none'>
         <Review />
       </div>
     </>

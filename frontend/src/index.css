@@ -92,6 +92,19 @@ h2 {
   color: #000000;
   border-color: #ffffff;
 }
+.menu-btn button {
+  background-color: #ffffff !important;
+  color: #000000;
+  border-color: #ffffff;
+}
+.menu-btn button:hover {
+  background-color: #76c2ad !important;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.menu-btn button:focus {
+  background-color: #76c2ad !important;
+}
 
 .no-decor-links {
   color: #000000;
