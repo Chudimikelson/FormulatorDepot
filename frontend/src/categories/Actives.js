@@ -27,19 +27,20 @@ const Actives = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Container>
-            <Row>
-              {products
-                .filter((product) => {
-                  return product.category === 'ACTIVE'
-                })
-                .map((product) => (
-                  <Col key={product._id} sm={6} md={4} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-            </Row>
-          </Container>
+          <Row>
+            {products
+              .filter((product) => {
+                return product.category === 'ACTIVE'
+              })
+              .map((product) => (
+                <div
+                  className='col-6 col-sm-3 col-md-4 col-lg-4'
+                  key={product._id}
+                >
+                  <Product product={product} />
+                </div>
+              ))}
+          </Row>
         </>
       )}
       <Review />

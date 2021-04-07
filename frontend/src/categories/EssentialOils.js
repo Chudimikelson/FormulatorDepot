@@ -6,7 +6,6 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import Review from '../components/ReviewsCarousel'
 
 const EssentialOils = () => {
   const dispatch = useDispatch()
@@ -20,29 +19,27 @@ const EssentialOils = () => {
   return (
     <>
       <Meta />
-      <h1 className='text-center'>ESSENTIAL OILS</h1>
+      <h5 className='text-center'>ESSENTIAL OILS</h5>
       {loading ? (
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <Container>
-            <Row>
-              {products
-                .filter((product) => {
-                  return product.category === 'ESSENTIAL OIL'
-                })
-                .map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-            </Row>
-          </Container>
-        </>
+        <Row>
+          {products
+            .filter((product) => {
+              return product.category === 'ESSENTIAL OIL'
+            })
+            .map((product) => (
+              <div
+                className='col-6 col-sm-3 col-md-4 col-lg-4'
+                key={product._id}
+              >
+                <Product product={product} />
+              </div>
+            ))}
+        </Row>
       )}
-      <Review />
     </>
   )
 }

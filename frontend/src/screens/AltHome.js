@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col, Form } from 'react-bootstrap'
+import { Card, Row, Col, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import Review from '../components/ReviewsCarousel'
+import eoils from '../img/carrier-oils.jpg'
 import Banner from '../components/Banner'
 
 const AltHome = ({ history }) => {
@@ -28,7 +29,7 @@ const AltHome = ({ history }) => {
     <>
       <Meta />
       <Banner />
-      <div className='d-md-none mb-4'>
+      <div className='d-none mb-4'>
         <h5 className='text-center'>Shop By Category</h5>
         <Form.Row>
           <Col xs='10' className='mx-auto'>
@@ -73,25 +74,46 @@ const AltHome = ({ history }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <Container fluid>
-            <Row>
-              {products
-                .filter((product) => {
-                  return product.featured === true
-                })
-                .map((product) => (
-                  <Col key={product._id} xs={12} md={3} sm={6}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-            </Row>
-          </Container>
-        </>
+        <Row>
+          {products
+            .filter((product) => {
+              return product.featured === true
+            })
+            .map((product) => (
+              <div
+                className='col-6 col-sm-3 col-md-4 col-lg-4'
+                key={product._id}
+              >
+                <Product product={product} />
+              </div>
+            ))}
+        </Row>
       )}
-      <div className='d-none'>
-        <Review />
-      </div>
+      <Row>
+        <div className='d-flex flex-wrap'>
+          <div className='col-12 px-0 py-1'>
+            <Card>
+              <Link to='/ESSENTIAL-OILS'>
+                <Card.Img
+                  src={eoils}
+                  variant='top'
+                  style={{ height: '12rem' }}
+                />
+              </Link>
+            </Card>
+          </div>
+          <div className='col-6 px-1'>
+            <Link to='/ESSENTIAL-OILS'>
+              <Card.Img src={eoils} variant='top' />
+            </Link>
+          </div>
+          <div className='col-6 px-1'>
+            <Link to='/ESSENTIAL-OILS'>
+              <Card.Img src={eoils} variant='top' />
+            </Link>
+          </div>
+        </div>
+      </Row>
     </>
   )
 }
