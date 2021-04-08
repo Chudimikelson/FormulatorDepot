@@ -91,7 +91,7 @@ const ProductListScreen = ({ history, match }) => {
               <Tab.Pane eventKey='products'>
                 <Tab.Container
                   id='left-tabs-example'
-                  defaultActiveKey='EMOLLIENTS'
+                  defaultActiveKey='ACTIVES'
                 >
                   <Row>
                     <Col sm={3}>
