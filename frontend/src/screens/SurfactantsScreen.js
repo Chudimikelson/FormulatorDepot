@@ -27,24 +27,25 @@ const SurfactantsScreen = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Container>
-            <Row>
-              {products
-                .filter((product) => {
-                  return (
-                    product.category === 'SURFACTANT' ||
-                    product.category === 'HUMECTANT' ||
-                    product.category === 'SOLUBILIZER' ||
-                    product.category === 'ADJUSTER'
-                  )
-                })
-                .map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-            </Row>
-          </Container>
+          <Row>
+            {products
+              .filter((product) => {
+                return (
+                  product.category === 'SURFACTANT' ||
+                  product.category === 'HUMECTANT' ||
+                  product.category === 'SOLUBILIZER' ||
+                  product.category === 'ADJUSTER'
+                )
+              })
+              .map((product) => (
+                <div
+                  className='col-6 col-sm-3 col-md-3 col-lg-3'
+                  key={product._id}
+                >
+                  <Product product={product} />
+                </div>
+              ))}
+          </Row>
         </>
       )}
       <Review />

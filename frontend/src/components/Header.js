@@ -248,7 +248,9 @@ const Header = () => {
             </div>
           </Container>
         </Navbar>
+        <hr />
       </div>
+
       {/**mobile navigation */}
 
       <div className='d-md-none'>

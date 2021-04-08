@@ -26,23 +26,21 @@ const Thickners = () => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <>
-          <Container>
-            <Row>
-              {products
-                .filter((product) => {
-                  return product.category === 'THICKNER'
-                })
-                .map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                    <Product product={product} />
-                  </Col>
-                ))}
-            </Row>
-          </Container>
-        </>
+        <Row className='px-md-5'>
+          {products
+            .filter((product) => {
+              return product.category === 'THICKNER'
+            })
+            .map((product) => (
+              <div
+                className='col-6 col-sm-4 col-md-3 col-lg-3'
+                key={product._id}
+              >
+                <Product product={product} />
+              </div>
+            ))}
+        </Row>
       )}
-      <Review />
     </>
   )
 }

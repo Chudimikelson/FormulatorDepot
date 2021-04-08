@@ -27,14 +27,14 @@ const Actives = () => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
-          <Row>
+          <Row className='px-md-5'>
             {products
               .filter((product) => {
                 return product.category === 'ACTIVE'
               })
               .map((product) => (
                 <div
-                  className='col-6 col-sm-3 col-md-4 col-lg-4'
+                  className='col-6 col-sm-4 col-md-3 col-lg-3'
                   key={product._id}
                 >
                   <Product product={product} />
@@ -43,7 +43,6 @@ const Actives = () => {
           </Row>
         </>
       )}
-      <Review />
     </>
   )
 }

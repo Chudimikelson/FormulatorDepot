@@ -44,9 +44,18 @@ h2 {
 .carousel a {
   margin: 0 auto;
 }
+.product-image {
+  height: 10rem;
+}
+
 @media (max-width: 900px) {
   .carousel-caption h2 {
     font-size: 2.5vw;
+  }
+}
+@media (min-width: 600px) {
+  .product-image {
+    height: 20rem;
   }
 }
 @media (max-width: 600px) {
