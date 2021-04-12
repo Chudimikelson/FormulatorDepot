@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel } from 'react-bootstrap'
 import slide1 from '../img/banner.jpg'
 import slide2 from '../img/bbanner.jpg'
-import slide3 from '../img/cbanner.jpg'
+import slide3 from '../img/abanner.jpg'
 
 const Banner = () => {
   return (
