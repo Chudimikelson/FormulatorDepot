@@ -105,8 +105,8 @@ const AltHome = ({ history }) => {
                   variant='top'
                   style={{ maxHeight: '350px' }}
                 />
+                <div className='btn btn-block finess mx-auto'>ACTIVES</div>
               </Link>
-              <div className='btn btn-block finess mx-auto'>ACTIVES</div>
             </Card>
           </div>
           <div className='col-12 col-md-4 px-0 pb-1'>
