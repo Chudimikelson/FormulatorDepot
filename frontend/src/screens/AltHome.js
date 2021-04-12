@@ -7,9 +7,9 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import eoils from '../img/banner.png'
-import preservs from '../img/bbanner.png'
-import butters from '../img/cbanner.png'
+import eoils from '../img/banner_one.jpg'
+import preservs from '../img/banner_one.jpg'
+import butters from '../img/banner_one.jpg'
 import Banner from '../components/Banner'
 
 const AltHome = ({ history }) => {
