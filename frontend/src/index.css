@@ -38,14 +38,37 @@ h2 {
   color: #fff;
 }
 
-.carousel img {
-  max-height: 450px;
+.bannerText {
+  position: absolute;
+  padding-top: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+.text-1 {
+  font-size: 1.5rem;
+  color: rgb(252, 251, 249);
+  font-weight: bolder;
+}
+.text-2 {
+  font-size: 0.7rem;
+  color: rgb(240, 165, 81);
+  font-weight: bold;
+}
+.text-3 {
+  font-size: 0.5rem;
+  color: rgb(31, 17, 3);
+  font-weight: bold;
 }
 .carousel a {
   margin: 0 auto;
 }
 .product-image {
   height: 10rem;
+}
+
+.bannerBG {
+  height: 35vh;
+  width: 100vw;
 }
 
 @media (max-width: 900px) {
@@ -56,6 +79,30 @@ h2 {
 @media (min-width: 600px) {
   .product-image {
     height: 20rem;
+  }
+  .bannerBG {
+    height: 60vh;
+  }
+  .bannerText {
+    position: absolute;
+    padding-top: 7rem;
+    background-color: rgba(0, 0, 0, 0.048);
+    height: 100%;
+  }
+  .text-1 {
+    font-size: 3rem;
+    color: rgb(252, 251, 249);
+    font-weight: bolder;
+  }
+  .text-2 {
+    font-size: 2rem;
+    color: rgb(240, 165, 81);
+    font-weight: bold;
+  }
+  .text-3 {
+    font-size: 1rem;
+    color: rgb(247, 193, 139);
+    font-weight: bold;
   }
 }
 @media (max-width: 600px) {

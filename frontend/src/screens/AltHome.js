@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Card, Row, Col, Form } from 'react-bootstrap'
+import { Card, Row, Col, Form, Jumbotron, Image, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import eoils from '../img/carrier-oils.jpg'
+import eoils from '../img/cbanner.jpg'
+import preservs from '../img/carrier-oils.jpg'
+import butters from '../img/avocado_unrefined.jpg'
 import Banner from '../components/Banner'
 
 const AltHome = ({ history }) => {
@@ -29,6 +31,7 @@ const AltHome = ({ history }) => {
     <>
       <Meta />
       <Banner />
+
       <div className='d-none mb-4'>
         <h5 className='text-center'>Shop By Category</h5>
         <Form.Row>
@@ -74,14 +77,14 @@ const AltHome = ({ history }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row>
+        <Row className='mx-md-5'>
           {products
             .filter((product) => {
               return product.featured === true
             })
             .map((product) => (
               <div
-                className='col-6 col-sm-3 col-md-4 col-lg-4'
+                className='col-6 col-sm-4 col-md-3 col-lg-3'
                 key={product._id}
               >
                 <Product product={product} />
@@ -90,26 +93,40 @@ const AltHome = ({ history }) => {
         </Row>
       )}
       <Row>
+        <Col>
+          <h4 className='text-center'>Shop by Category</h4>
+        </Col>
         <div className='d-flex flex-wrap'>
-          <div className='col-12 px-0 py-1'>
+          <div className='col-12 col-md-4 px-0 pb-1'>
             <Card>
               <Link to='/ESSENTIAL-OILS'>
                 <Card.Img
                   src={eoils}
                   variant='top'
-                  style={{ height: '12rem' }}
+                  style={{ maxHeight: '350px' }}
                 />
               </Link>
+              <div className='btn btn-block finess mx-auto'>ACTIVES</div>
             </Card>
           </div>
-          <div className='col-6 px-1'>
+          <div className='col-12 col-md-4 px-0 pb-1'>
             <Link to='/ESSENTIAL-OILS'>
-              <Card.Img src={eoils} variant='top' />
+              <Card.Img
+                src={butters}
+                variant='top'
+                style={{ maxHeight: '350px' }}
+              />
+              <div className='btn btn-block finess mx-auto'>Butters</div>
             </Link>
           </div>
-          <div className='col-6 px-1'>
+          <div className='col-12 col-md-4 px-0 pb-1'>
             <Link to='/ESSENTIAL-OILS'>
-              <Card.Img src={eoils} variant='top' />
+              <Card.Img
+                src={preservs}
+                variant='top'
+                style={{ maxHeight: '350px' }}
+              />
+              <div className='btn btn-block finess mx-auto'>Preservatives</div>
             </Link>
           </div>
         </div>

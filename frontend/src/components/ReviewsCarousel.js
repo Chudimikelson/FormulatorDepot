@@ -1,9 +1,5 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
-import slide1 from '../img/img-1.jpg'
-import slide2 from '../img/img-2.jpg'
-import slide3 from '../img/img-3.jpg'
-import slide4 from '../img/img-4.jpg'
 
 const Review = () => {
   return (
