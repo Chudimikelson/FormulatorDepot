@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Card, Row, Col, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Row, Col, Form } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import data from '../data.js'
 import Banner from '../components/Banner'
+import ShopByCategories from '../components/ShopByCategories'
 
 const AltHome = ({ history }) => {
   const dispatch = useDispatch()
@@ -90,45 +89,7 @@ const AltHome = ({ history }) => {
             ))}
         </Row>
       )}
-      <Row>
-        <Col>
-          <h4 className='text-center'>Shop by Category</h4>
-        </Col>
-        <div className='d-flex flex-wrap'>
-          <div className='col-12 col-md-4 px-0 pb-1'>
-            <Card>
-              <Link to='/ESSENTIAL-OILS'>
-                <Card.Img
-                  src={data.abanner}
-                  variant='top'
-                  style={{ maxHeight: '350px' }}
-                />
-                <div className='btn btn-block finess mx-auto'>ACTIVES</div>
-              </Link>
-            </Card>
-          </div>
-          <div className='col-12 col-md-4 px-0 pb-1'>
-            <Link to='/ESSENTIAL-OILS'>
-              <Card.Img
-                src={butters}
-                variant='top'
-                style={{ maxHeight: '350px' }}
-              />
-              <div className='btn btn-block finess mx-auto'>Butters</div>
-            </Link>
-          </div>
-          <div className='col-12 col-md-4 px-0 pb-1'>
-            <Link to='/ESSENTIAL-OILS'>
-              <Card.Img
-                src={preservs}
-                variant='top'
-                style={{ maxHeight: '350px' }}
-              />
-              <div className='btn btn-block finess mx-auto'>Preservatives</div>
-            </Link>
-          </div>
-        </div>
-      </Row>
+      <ShopByCategories />
     </>
   )
 }
