@@ -1,7 +1,7 @@
 import React from 'react'
 import catPic1 from '../img/buttermilk.jpg'
 import catPic2 from '../img/banner.png'
-import catPic3 from '../img/carrier-oils.jpg'
+import catPic3 from '../img/buttermilk.jpg'
 import { Link } from 'react-router-dom'
 import { Card, Row, Col } from 'react-bootstrap'
 
