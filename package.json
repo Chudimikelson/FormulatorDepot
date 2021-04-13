@@ -1,6 +1,9 @@
 {
   "name": "cfd-prod",
   "version": "1.1.0",
+  "engines": {
+    "node": "15.5.0"
+  },
   "description": "full stack e-commerce shop",
   "main": "server.js",
   "type": "module",
