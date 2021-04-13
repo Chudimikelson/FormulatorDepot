@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -19,7 +19,7 @@ const EssentialOils = () => {
   return (
     <>
       <Meta />
-      <h5 className='text-center'>ESSENTIAL OILS</h5>
+      <h5 className='text-center'>Essential Oils</h5>
       {loading ? (
         <Loader />
       ) : error ? (

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col } from 'react-bootstrap'
-import Product from '../components/Product'
-import Message from '../components/Message'
+import { Row } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
+import Message from '../components/Message'
+import Product from '../components/Product'
 import { listProductsByCategory } from '../actions/productActions'
-import Review from '../components/ReviewsCarousel'
 
 const Bases = () => {
   const dispatch = useDispatch()
@@ -20,7 +19,7 @@ const Bases = () => {
   return (
     <>
       <Meta />
-      <h1 className='text-center'>COSMETIC BASES</h1>
+      <h1 className='text-center'>Cosmetic Bases</h1>
       {loading ? (
         <Loader />
       ) : error ? (

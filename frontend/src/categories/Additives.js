@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import Review from '../components/ReviewsCarousel'
 
 const Additives = () => {
   const dispatch = useDispatch()
@@ -20,7 +19,7 @@ const Additives = () => {
   return (
     <>
       <Meta />
-      <h1 className='text-center'>ADDITIVES</h1>
+      <h1 className='text-center'>Additives</h1>
       {loading ? (
         <Loader />
       ) : error ? (

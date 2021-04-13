@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import Review from '../components/ReviewsCarousel'
 
 const Thickners = () => {
   const dispatch = useDispatch()

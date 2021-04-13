@@ -10,7 +10,6 @@ import ProductCarousel from '../components/ProductCarousel'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import ShopByCategories from '../components/ShopByCategories'
-import Review from '../components/ReviewsCarousel'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -63,13 +62,13 @@ const HomeScreen = ({ match }) => {
             </Row>
           </Container>
           <Paginate
+            className='d-none'
             pages={pages}
             page={page}
             keyword={keyword ? keyword : ''}
           />
         </>
       )}
-      <Review />
     </>
   )
 }

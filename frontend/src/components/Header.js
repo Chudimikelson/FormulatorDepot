@@ -254,7 +254,7 @@ const Header = () => {
       {/**mobile navigation */}
 
       <div className='d-md-none'>
-        <nav class='navbar fixed-bottom navbar-light bg-light'>
+        <nav className='navbar fixed-bottom navbar-light bg-light'>
           <div className='col-3'>
             {' '}
             {userInfo ? (

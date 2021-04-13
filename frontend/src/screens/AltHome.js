@@ -7,9 +7,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
 import { listProductsByCategory } from '../actions/productActions'
-import eoils from '../img/cbanner.png'
-import preservs from '../img/abanner.jpg'
-import butters from '../img/banner.png'
+import data from '../data.js'
 import Banner from '../components/Banner'
 
 const AltHome = ({ history }) => {
@@ -101,7 +99,7 @@ const AltHome = ({ history }) => {
             <Card>
               <Link to='/ESSENTIAL-OILS'>
                 <Card.Img
-                  src={eoils}
+                  src={data.abanner}
                   variant='top'
                   style={{ maxHeight: '350px' }}
                 />
